@@ -53,19 +53,9 @@ It supports **Admin**, **Professor**, and **Student** dashboards — ensuring au
 
 ---
 
-## 🧩 Database Concepts Implemented (for Academic Marks)
-
-### ✅ MySQL Functions
 
 
--- Returns total attended classes
-CREATE FUNCTION fn_attended_count(enrol_no VARCHAR(20), sub_id INT)
-RETURNS INT ...
-
--- Returns total classes for a subject
-CREATE FUNCTION fn_total_classes(sub_id INT)
-RETURNS INT ...
-📊 Flow of the System
+ ###📊 Flow of the System
 
 1.Admin adds/upload data (students, professors, subjects, routines).
 2.Professors take attendance through their dashboard.
@@ -76,7 +66,9 @@ RETURNS INT ...
 7.Admin reviews alerts and can take action.
 
 
-🧾 Folder Structure
+###🧾 Folder Structure
+
+'''sql
 
 attendance_tracker/
 │
@@ -101,23 +93,25 @@ attendance_tracker/
 │   └── prof_attendance_records.html
 └── uploads/                    # CSV upload files
 
+'''sql
 
-💻 Setup Instructions
-1️⃣ Clone Repository
+
+###💻 Setup Instructions
+##1️⃣ Clone Repository
 git clone https://github.com/yourusername/attendance-tracker.git
 cd attendance-tracker
 
-2️⃣ Install Dependencies
+##2️⃣ Install Dependencies
 pip install -r requirements.txt
 
-3️⃣ Setup Database
+##3️⃣ Setup Database
 CREATE DATABASE attendance_tracker;
 USE attendance_tracker;
 
 
 Then run or import your schema, triggers, and procedures.
 
-4️⃣ Start Server
+##4️⃣ Start Server
 python app.py
 
 
@@ -125,7 +119,7 @@ Then open:
 👉 http://127.0.0.1:5000
 
 
-👨‍💻 Author
+###👨‍💻 Author
 
 Prajwal V
 Department of Computer Science
@@ -133,12 +127,12 @@ PES University, Bangalore
 📧vprajwal22042gmail.com
 
 
-🧾 License
+###🧾 License
 
 This project was developed as part of UE23CS351A – Mini Project (Database Systems).
 You are free to use or modify it for academic or learning purposes.
 
-💡 Future Enhancements
+###💡 Future Enhancements
 
 Email notification system for absentees.
 Real-time analytics dashboard for admin.
