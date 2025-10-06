@@ -117,17 +117,22 @@ pip install -r requirements.txt
 ```
 
 3️⃣ Setup Database
+```bash
 CREATE DATABASE attendance_tracker;
 USE attendance_tracker;
+```
 
 Then run or import your schema, triggers, and procedures.
 
 4️⃣ Start Server
+```bash
 python app.py
-
+```
 
 Then open:
+```bash
 👉 http://127.0.0.1:5000
+```
 
 
 ---
@@ -136,13 +141,10 @@ Then open:
 
 ### 👨‍💻 Author
 
-Prajwal V
-
-Department of Computer Science
-
-PES University, Bangalore
-
-📧vprajwal2204gmail.com
+-Prajwal V
+-Department of Computer Science
+-PES University, Bangalore
+-📧vprajwal2204gmail.com
 
 
 ---
