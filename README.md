@@ -56,7 +56,8 @@ It supports **Admin**, **Professor**, and **Student** dashboards — ensuring au
 ## 🧩 Database Concepts Implemented (for Academic Marks)
 
 ### ✅ MySQL Functions
-```sql
+
+
 -- Returns total attended classes
 CREATE FUNCTION fn_attended_count(enrol_no VARCHAR(20), sub_id INT)
 RETURNS INT ...
