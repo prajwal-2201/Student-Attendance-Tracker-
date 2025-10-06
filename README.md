@@ -112,7 +112,9 @@ git clone https://github.com/yourusername/attendance-tracker.git
 cd attendance-tracker
 
 2️⃣ Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
 3️⃣ Setup Database
 CREATE DATABASE attendance_tracker;
