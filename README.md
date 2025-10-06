@@ -58,11 +58,17 @@ It supports **Admin**, **Professor**, and **Student** dashboards — ensuring au
  ### 📊 Flow of the System
 
 1.Admin adds/upload data (students, professors, subjects, routines).
+
 2.Professors take attendance through their dashboard.
+
 3.MySQL trigger checks attendance:
+
 4.If absent, logs “Absent Today”.
+
 5.If < 75%, logs “Low Attendance Alert”.
+
 6.Students view their summary dynamically.
+
 7.Admin reviews alerts and can take action.
 
 ---
@@ -127,8 +133,11 @@ Then open:
 ### 👨‍💻 Author
 
 Prajwal V
+
 Department of Computer Science
+
 PES University, Bangalore
+
 📧vprajwal2204gmail.com
 
 
@@ -139,6 +148,7 @@ PES University, Bangalore
 ### 🧾 License
 
 This project was developed as part of UE23CS351A – Mini Project (Database Systems).
+
 You are free to use or modify it for academic or learning purposes.
 
 
@@ -148,8 +158,11 @@ You are free to use or modify it for academic or learning purposes.
 ### 💡 Future Enhancements
 
 Email notification system for absentees.
+
 Real-time analytics dashboard for admin.
+
 Cloud deployment (Render/Heroku).
+
 Attendance QR code scanning system.
 
 ---
