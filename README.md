@@ -76,7 +76,8 @@ It supports **Admin**, **Professor**, and **Student** dashboards — ensuring au
 
 
  ### 🧾 Folder Structure
-
+ 
+'''bash
 attendance_tracker/
 │
 ├── app.py                     # Main Flask app
@@ -99,6 +100,7 @@ attendance_tracker/
 │   ├── prof_take_attendance.html
 │   └── prof_attendance_records.html
 └── uploads/                    # CSV upload files
+'''
 
 
 ---
