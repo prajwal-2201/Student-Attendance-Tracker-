@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add Student</h2>
+<form method="post">
+  <label>Enrol No:</label><br>
+  <input type="text" name="enrol_no" required><br><br>
+
+  <label>Class Roll:</label><br>
+  <input type="number" name="class_roll" required><br><br>
+
+  <label>Name:</label><br>
+  <input type="text" name="name" required><br><br>
+
+  <label>Email:</label><br>
+  <input type="email" name="email"><br><br>
+
+  <label>Year:</label><br>
+  <input type="number" name="year" required><br><br>
+
+  <label>Section:</label><br>
+  <input type="text" name="section" required><br><br>
+
+  <label>Password:</label><br>
+  <input type="password" name="password" required><br><br>
+
+  <button type="submit">Save</button>
+</form>
+<a href="{{ url_for('admin_students') }}">Back</a>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Take Attendance</h2>
+<p>
+    <b>{{ routine.day }} {{ routine.timing }}</b> - 
+    {{ routine.subject.sub_name }} (Year {{ routine.year }} Section {{ routine.section }})
+</p>
+
+<form method="POST">
+    <label>
+        Date: 
+        <input type="date" name="date" value="{{ current_date }}" required>
+    </label>
+    <table border="1">
+        <tr>
+            <th>Roll</th>
+            <th>Name</th>
+            <th>Status</th>
+        </tr>
+        {% for s in students %}
+        <tr>
+            <td>{{ s.class_roll }}</td>
+            <td>{{ s.name }}</td>
+            <td>
+                <select name="status_{{ s.enrol_no }}">
+                    <option value="Present">Present</option>
+                    <option value="Absent">Absent</option>
+                    <option value="Late">Late</option>
+                    <option value="Leave">Leave</option>
+                </select>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <button type="submit">Save Attendance</button>
+</form>
+{% endblock %}

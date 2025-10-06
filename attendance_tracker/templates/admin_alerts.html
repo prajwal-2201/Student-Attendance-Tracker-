@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<h2>🚨 Attendance Alerts</h2>
+
+<table border="1" cellpadding="6">
+  <thead>
+    <tr>
+      <th>Student</th>
+      <th>Enrollment</th>
+      <th>Subject</th>
+      <th>Type</th>
+      <th>Percentage</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for a in alerts %}
+    <tr>
+      <td>{{ a.student_name }}</td>
+      <td>{{ a.enrol_no }}</td>
+      <td>{{ a.sub_name }}</td>
+      <td>
+        {% if a.alert_type == 'absent_today' %}
+          ❌ Absent Today
+        {% else %}
+          ⚠️ Low Attendance
+        {% endif %}
+      </td>
+      <td>{{ a.percent if a.percent else '-' }}</td>
+      <td>{{ a.class_date if a.class_date else '-' }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<hr>
+<a href="{{ url_for('dashboard_admin') }}">⬅ Back to Dashboard</a>
+</div>
+{% endblock %}

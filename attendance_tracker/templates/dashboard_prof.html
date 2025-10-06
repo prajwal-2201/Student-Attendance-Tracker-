@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Professor Dashboard</h2>
+<ul>
+    <li><a href="{{ url_for('prof_routine') }}">My Routine</a></li>
+    <li><a href="{{ url_for('prof_attendance_records') }}">View Attendance Records</a></li>
+    <li><a href="{{ url_for('logout') }}">Logout</a></li>
+</ul>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Day</th>
+      <th>Time</th>
+      <th>Subject</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for r, subj in routines %}
+    <tr>
+      <td>{{ r.day }}</td>
+      <td>{{ r.timing }}</td>
+      <td>{{ subj.sub_name }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

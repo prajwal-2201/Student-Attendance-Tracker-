@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Manage Subjects</h2>
+<a href="{{ url_for('admin_add_subject') }}">Add New Subject</a>
+<ul>
+{% for s in subjects %}
+  <li>{{ s.sub_code }} - {{ s.sub_name }} (Year {{ s.year }})
+    <form method="POST" action="{{ url_for('admin_delete_subject', sub_id=s.sub_id) }}" class="inline">
+      <button type="submit" class="btn-icon" onclick="return confirm('Delete {{ s.sub_name }}?')">
+        🗑
+      </button>
+    </form>
+  </li>
+{% endfor %}
+</ul>
+<a href="{{ url_for('dashboard_admin') }}">Back to Dashboard</a>
+{% endblock %}

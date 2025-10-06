@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add Routine</h2>
+<form method="POST">
+  Day: <select name="day" required>
+    <option>Mon</option><option>Tue</option><option>Wed</option>
+    <option>Thu</option><option>Fri</option><option>Sat</option>
+  </select><br>
+  Timing: <input type="text" name="timing" placeholder="09:00-09:50" required><br>
+  Year: <input type="number" name="year" required><br>
+  Section: <input type="text" name="section" required><br>
+  Subject Code: <input type="text" name="sub_code" required><br>
+  Professor Username: <input type="text" name="prof_username" required><br>
+  <button type="submit">Add</button>
+</form>
+<a href="{{ url_for('admin_routines') }}">Back</a>
+{% endblock %}

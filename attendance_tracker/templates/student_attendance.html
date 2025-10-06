@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>📖 Detailed Attendance</h2>
+<p><strong>{{ current_user.name }}</strong> ({{ current_user.enrol_no }})</p>
+
+<table border="1" cellpadding="6">
+  <tr>
+    <th>Date</th>
+    <th>Subject</th>
+    <th>Status</th>
+  </tr>
+  {% for att, sub in records %}
+  <tr>
+    <!-- Use class_date instead of date -->
+    <td>{{ att.class_date.strftime("%d-%b-%Y") if att.class_date else "" }}</td>
+    <td>{{ sub.sub_name }}</td>
+    <td>
+      {% if att.status.lower() == "present" %}
+        ✅ Present
+      {% elif att.status.lower() == "absent" %}
+        ❌ Absent
+      {% elif att.status.lower() == "late" %}
+        ⏰ Late
+      {% elif att.status.lower() == "leave" %}
+        📝 Leave
+      {% else %}
+        {{ att.status }}
+      {% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+
+<hr>
+<a href="{{ url_for('dashboard_student') }}">⬅ Back to Dashboard</a>
+{% endblock %}

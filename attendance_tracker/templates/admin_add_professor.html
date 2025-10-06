@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add Professor</h2>
+<form method="POST">
+  Username: <input type="text" name="username" required><br>
+  Name: <input type="text" name="name" required><br>
+  Email: <input type="email" name="email"><br>
+  Password: <input type="password" name="password" required><br>
+  <button type="submit">Add</button>
+</form>
+<a href="{{ url_for('admin_professors') }}">Back</a>
+{% endblock %}

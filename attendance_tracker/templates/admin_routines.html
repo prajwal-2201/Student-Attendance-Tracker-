@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Manage Routine</h2>
+<a href="{{ url_for('admin_add_routine') }}">Add New Routine</a>
+<ul>
+{% for r in routines %}
+  <li>{{ r.day }} {{ r.timing }} - Year {{ r.year }}{{ r.section }}
+      | Sub ID: {{ r.sub_id }} | Prof ID: {{ r.prof_id }}
+    <form method="POST" 
+      action="{{ url_for('admin_delete_routine', routine_id=r.routine_id) }}" 
+      class="inline">
+  <button type="submit" class="btn-icon" onclick="return confirm('Delete routine {{ r.day }} {{ r.timing }}?')">
+    🗑
+  </button>
+</form>
+
+  </li>
+{% endfor %}
+</ul>
+<a href="{{ url_for('dashboard_admin') }}">Back to Dashboard</a>
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Manage Professors</h2>
+<a href="{{ url_for('admin_add_professor') }}">Add New Professor</a>
+<ul>
+{% for p in professors %}
+  <li>{{ p.username }} - {{ p.name }} ({{ p.email }})
+    <form method="POST" 
+      action="{{ url_for('admin_delete_professor', prof_id=p.prof_id) }}" 
+      class="inline">
+  <button type="submit" class="btn-icon" onclick="return confirm('Delete {{ p.name }}?')">
+    🗑
+  </button>
+</form>
+
+  </li>
+{% endfor %}
+</ul>
+<a href="{{ url_for('dashboard_admin') }}">Back to Dashboard</a>
+{% endblock %}

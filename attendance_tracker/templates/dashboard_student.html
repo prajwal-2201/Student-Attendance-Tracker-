@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>🎓 Student Dashboard</h2>
+<p><b>{{ current_user.name }}</b> ({{ current_user.enrol_no }})</p>
+
+<!-- ✅ Logout Button -->
+<div style="text-align: right; margin-bottom: 20px;">
+  <a href="{{ url_for('logout') }}" class="btn-logout">🚪 Logout</a>
+</div>
+
+<h3>📅 Timetable</h3>
+<table border="1" cellpadding="6">
+  <tr>
+    <th>Day</th>
+    <th>Time</th>
+    <th>Subject</th>
+    <th>Professor</th>
+  </tr>
+  {% for r, sub, prof in routines %}
+  <tr>
+    <td>{{ r.day }}</td>
+    <td>{{ r.timing }}</td>
+    <td>{{ sub.sub_name }}</td>
+    <td>{{ prof.name }}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<hr>
+
+<h3>📊 Attendance Summary</h3>
+<table border="1" cellpadding="6">
+  <tr>
+    <th>Subject</th>
+    <th>Total Classes</th>
+    <th>Attended</th>
+    <th>Percentage</th>
+  </tr>
+  {% for row in summary %}
+  <tr>
+    <td>{{ row.subject }}</td>
+    <td>{{ row.total }}</td>
+    <td>{{ row.attended }}</td>
+    <td>{{ row.percent }}%</td>
+  </tr>
+  {% endfor %}
+</table>
+
+<hr>
+<a href="{{ url_for('student_attendance') }}">📖 View Detailed Attendance</a>
+{% endblock %}

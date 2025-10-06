@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Admin Dashboard</h2>
+<p>Welcome, {{ current_user.username }}</p>
+<a href="{{ url_for('admin_alerts') }}">🚨 View Attendance Alerts</a>
+
+<h3>Manage Data</h3>
+<ul>
+  <li><a href="{{ url_for('admin_students') }}">Students</a></li>
+  <li><a href="{{ url_for('admin_professors') }}">Professors</a></li>
+  <li><a href="{{ url_for('admin_subjects') }}">Subjects</a></li>
+  <li><a href="{{ url_for('admin_routines') }}">Routine</a></li>
+</ul>
+
+<h3>Bulk Upload</h3>
+<ul>
+  <li><a href="{{ url_for('admin_upload', datatype='students') }}">Upload Students</a></li>
+  <li><a href="{{ url_for('admin_upload', datatype='professors') }}">Upload Professors</a></li>
+  <li><a href="{{ url_for('admin_upload', datatype='subjects') }}">Upload Subjects</a></li>
+  <li><a href="{{ url_for('admin_upload', datatype='routine') }}">Upload Routine</a></li>
+</ul>
+
+<a href="{{ url_for('logout') }}">Logout</a>
+{% endblock %}
+
+

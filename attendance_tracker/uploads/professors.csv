@@ -1,0 +1,6 @@
+username,name,email,password
+profdb,Dr. Rakesh Sharma,sharma.db@example.com,dbpass
+profml,Dr. Kavita Menon,menon.ml@example.com,mlpass
+profse,Dr. Anil Kapoor,kapoor.se@example.com,sepass
+profcns,Dr. Nisha Rao,rao.cns@example.com,cnspass
+profac,Dr. Vinod Krishnan,krishnan.ac@example.com,acpass

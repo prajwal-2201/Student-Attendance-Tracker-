@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>My Routine</h2>
+<table border="1">
+    <tr>
+        <th>Day</th>
+        <th>Timing</th>
+        <th>Year</th>
+        <th>Section</th>
+        <th>Subject</th>
+        <th>Action</th>
+    </tr>
+    {% for r in routines %}
+    <tr>
+        <td>{{ r.day }}</td>
+        <td>{{ r.timing }}</td>
+        <td>{{ r.year }}</td>
+        <td>{{ r.section }}</td>
+        <td>{{ r.subject.sub_name }}</td>
+        <td>
+            <a href="{{ url_for('prof_take_attendance', routine_id=r.routine_id) }}">Take Attendance</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

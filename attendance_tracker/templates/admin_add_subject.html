@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add Subject</h2>
+<form method="POST">
+  Subject Code: <input type="text" name="sub_code" required><br>
+  Subject Name: <input type="text" name="sub_name" required><br>
+  Year: <input type="number" name="year" required><br>
+  <button type="submit">Add</button>
+</form>
+<a href="{{ url_for('admin_subjects') }}">Back</a>
+{% endblock %}
