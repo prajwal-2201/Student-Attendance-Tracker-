@@ -141,10 +141,13 @@ Then open:
 
 ### 👨‍💻 Author
 
--Prajwal V
--Department of Computer Science
--PES University, Bangalore
--📧vprajwal2204gmail.com
+Prajwal V
+
+Department of Computer Science
+
+PES University, Bangalore
+
+📧vprajwal2204gmail.com
 
 
 ---
