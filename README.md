@@ -66,9 +66,8 @@ It supports **Admin**, **Professor**, and **Student** dashboards — ensuring au
 7.Admin reviews alerts and can take action.
 
 
-###🧾 Folder Structure
 
-'''sql
+### 🧾 Folder Structure
 
 attendance_tracker/
 │
@@ -92,8 +91,6 @@ attendance_tracker/
 │   ├── prof_take_attendance.html
 │   └── prof_attendance_records.html
 └── uploads/                    # CSV upload files
-
-'''sql
 
 
 ###💻 Setup Instructions
